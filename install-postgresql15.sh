@@ -9,7 +9,7 @@ yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_6
 if [ $? -ne 0 ]
 then
 	echo -e "${R}[-] Failed to add Postgresql REPO... Exiting...${NC}"
-	exit
+	exit 1
 fi
 echo -e "${G}[+] Updating repositories...${NC}"
 yum -y update
@@ -18,14 +18,14 @@ sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 if [ $? -ne 0 ]
 then
 	echo -e "${R}[-] Failed to add epel release REPO... Exiting...${NC}"
-	exit
+	exit 1
 fi
 echo -e "${G}[+] Installing Postgresql 15${NC}"
 yum -y install postgresql15-server
 if [ $? -ne 0 ]
 then
 	echo -e "${R}[-] Failed to install Postgresql 15${NC}"
-	exit
+	exit 1
 fi
 echo -e "${G}[+] Successfully installed Postgresql 15${NC}"
 
