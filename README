@@ -1,0 +1,13 @@
+*As superuser 
+Set permisions 700 to files install-postgresql15.sh  post-install-postgresql15
+
+1.- Run first install script
+./install-postgresql15.sh
+
+2.- If previous step finished correctly run the post install script
+./post-install-postgresql15
+
+Additionally change the postgres's user password by 'passwd postgres' command
+And then change it into the postgresql database enter to the postgres user by 'su - postgres'
+and then execute "psql -c "ALTER USER postgres WITH PASSWORD 'StrongPassw0rd';" expected output "ALTER ROLE"
+

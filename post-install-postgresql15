@@ -1,0 +1,10 @@
+#!/bin/bash
+psql -V
+echo 'Init postgresql db'
+/usr/pgsql-15/bin/postgresql-15-setup initdb
+if [ $? -eq 0 ]
+then
+	echo 'Enable service'
+	systemctl enable --now postgresql-15
+fi
+systemctl status postgresql-15
